@@ -40,7 +40,8 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <img style="max-width: 250px;" src="{{ asset('storage/img/'.$item->image) }}" alt="">
+                                                {{-- <img style="max-width: 250px;" src="{{ asset('storage/img/'.$item->image) }}" alt=""> --}}
+                                                <img style="max-width: 250px;" src="/uploads/img/{{$item->image}}" alt="">
                                                 <div class="d-flex">
                                                     <div class="m-2">
                                                         <span class="fw-bold">Jam Buka</span>
