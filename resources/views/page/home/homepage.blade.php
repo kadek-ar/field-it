@@ -52,7 +52,8 @@
                                         <!-- Slides -->
                                         @foreach ($news as $item)
                                             <div class="swiper-slide" onclick="gotoNews('{{$item->id}}')">
-                                                <img class="img-fluid w-100" src="{{ asset('storage/img/'.$item->image) }}" alt="">
+                                                {{-- <img class="img-fluid w-100" src="{{ asset('storage/img/'.$item->image) }}" alt=""> --}}
+                                                <img class="img-fluid w-100" src="/uploads/img/{{$item->image}}" alt="">
                                             </div>
                                         @endforeach
                                     </div>

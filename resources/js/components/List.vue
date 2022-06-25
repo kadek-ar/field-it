@@ -20,7 +20,8 @@
         <div class="container">
             <div v-for="item in fields" class="card shadow-lg p-3 mb-3">
                 <div class="d-flex">
-                    <img style="max-width: 250px;" :src="'../storage/img/'+item.image" alt="">
+                    <!-- <img style="max-width: 250px;" :src="'../storage/img/'+item.image" alt=""> -->
+                    <img style="max-width: 250px;" :src="'/uploads/img/'+item.image" alt="">
                     <div class="ps-3 w-100">
                         <span class="fw-bolder fs-3">{{ item.name }}</span>
                         <div class="d-flex align-items-center">

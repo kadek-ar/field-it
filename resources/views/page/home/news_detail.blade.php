@@ -10,7 +10,7 @@
             <h1 class="text-center fw-bold ">{{ $news->title }}</h1>
         </div>
         <div class="m-auto" style="max-width: 550px;">
-            <img class="text-center w-100" src="{{ asset('storage/img/'.$news->image) }}" alt="">
+            <img class="text-center w-100" src="/uploads/img/{{$news->image}}" alt="">
         </div>
         <hr>
         <div>

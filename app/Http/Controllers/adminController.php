@@ -55,7 +55,8 @@ class adminController extends Controller
                     $img_file->getClientOriginalName();
         
 
-        $img_file->storeAs('public/img', $img_name);
+        // $img_file->storeAs('public/img', $img_name);
+        $img_file->storeAs('img', $img_name, 'public_uploads');
 
         News::create([
             "user_id" => Auth::id(),

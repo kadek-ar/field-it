@@ -54,7 +54,12 @@ class fieldController extends Controller
         //             $schedule_file->getClientOriginalName();
         
 
-        $img_file->storeAs('public/img', $img_name);
+        // $img_file->storeAs('public/img', $img_name);
+        $img_file->storeAs('img', $img_name, 'public_uploads');
+
+        // dd($path);
+        // Storage::disk('public_uploads')->put($path, $file_content);
+
 
         // $schedule_file->storeAs('public/schedule', $img_name);
         
