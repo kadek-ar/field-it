@@ -94,6 +94,11 @@ Route::get('/aboutus', function () {
 //    return view('maps');
 // });
 
-Route::get('/schedule', function () {
-    return view('schedule');
- });
+// Route::get('/schedule', function () {
+//     return view('schedule');
+//  });
+
+Route::get('/linkstorage', function () {
+   Artisan::call('storage:link');
+});
+
