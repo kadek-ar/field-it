@@ -1,0 +1,129 @@
+body{
+    overflow-x: hidden;
+}
+
+p{
+    font-size: 18px;
+}
+
+.mContent img{
+    /* top: 50%;
+    left: 50%;
+    padding-top: 14%;
+    margin-left: 30%; */
+    margin-top: 1%;
+    width: 400px;
+}
+
+.topic h1 span{
+    color: crimson;
+    font-size: 80px;
+    font-family: 'Edwardian Script ITC';
+}
+
+.brand span{
+    color: crimson;
+    font-size: 50px;
+    font-family: 'Brush Script MT';
+}
+
+p b{
+    font-size: 19px;
+}
+
+p {
+    font-size: 17px;
+}
+
+.sub_topic1{
+    font-size: 19px;
+}
+
+/* Footer */
+
+footer{
+    font-size: 17px;
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+    padding-top: 0.5rem;
+}
+
+footer h6 a:hover {
+    color: crimson;
+    transition: 0.5s;
+}
+
+.footer_img1 img{
+    width: 250px;
+    height: 70px;
+}
+
+.footer_img2 img{
+    width: 130px;
+    height: 120px;
+}
+/*  */
+
+/* Horizontal Line */
+
+.line-white{
+    background: white;
+    border: solid white 1px;
+    border-radius: 50%;
+    width: 75%;
+}
+
+.line-black{
+    background: rgb(15, 15, 15);
+    border: solid rgb(15, 15, 15) 2px;
+    border-radius: 50%;
+    width: 75%;
+}
+
+
+/* End of Horizontal Line */
+
+  /* Custom Scroll Bar */
+  
+  ::-webkit-scrollbar{
+    width: 9px;
+    border-radius: 5px;
+    background: rgb(36, 35, 35);
+  
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    background-color: rgb(36, 35, 35);
+    border-radius: 5px;
+    border: solid crimson  5px;
+  }
+  
+  /* #ffc72c */
+  
+  
+  /* End of Custom Scroll Bar */
+
+  /* Scroll Top button (topBtn) */
+
+#topBtn {
+    position: fixed;
+    overflow: hidden;
+    bottom: 20px;
+    right: 40px;
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    background: crimson;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+/*  */
+
+.para_box {
+    margin-left: 150px;
+    margin-right: 150px;
+}
