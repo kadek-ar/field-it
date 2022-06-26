@@ -28,7 +28,8 @@
                 <div class="d-flex mb-4">
                     <div class="w-50">
                         {{-- <img class="w-100 ms-2" src=" {{ asset('storage/img/'.$field->image) }} " alt=""> --}}
-                        <img class="w-100 ms-2" src="/uploads/img/{{$field->image}}" alt="">
+                        {{-- <img class="w-100 ms-2" src="/uploads/img/{{$field->image}}" alt=""> --}}
+                        <img class="w-100 ms-2" src="{{Storage::disk('s3')->temporaryUrl($field->image, now()->addMinutes(60))}}" alt="">
                     </div>
                     <div class="w-50 ps-4">
                         <div class="m-2">

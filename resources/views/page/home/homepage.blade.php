@@ -53,7 +53,8 @@
                                         @foreach ($news as $item)
                                             <div class="swiper-slide" onclick="gotoNews('{{$item->id}}')">
                                                 {{-- <img class="img-fluid w-100" src="{{ asset('storage/img/'.$item->image) }}" alt=""> --}}
-                                                <img class="img-fluid w-100" src="/uploads/img/{{$item->image}}" alt="">
+                                                {{-- <img class="img-fluid w-100" src="/uploads/img/{{$item->image}}" alt=""> --}}
+                                                <img class="img-fluid w-100" src="{{Storage::disk('s3')->temporaryUrl($item->image, now()->addMinutes(60))}}" alt="">
                                             </div>
                                         @endforeach
                                     </div>

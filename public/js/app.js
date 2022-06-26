@@ -5450,6 +5450,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -28749,7 +28750,7 @@ var render = function () {
           _c("div", { staticClass: "d-flex" }, [
             _c("img", {
               staticStyle: { "max-width": "250px" },
-              attrs: { src: "/uploads/img/" + item.image, alt: "" },
+              attrs: { src: item.temporyUrl, alt: "" },
             }),
             _vm._v(" "),
             _c("div", { staticClass: "ps-3 w-100" }, [

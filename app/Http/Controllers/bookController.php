@@ -15,6 +15,7 @@ use App\Models\OrderList;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 use App\Services\Midtrans\CreateSnapTokenService;
+use Illuminate\Support\Facades\Storage;
 
 class bookController extends Controller
 {
@@ -25,6 +26,11 @@ class bookController extends Controller
 
     public function listFieldApi(){
         $field = Field::latest()->get();
+
+        foreach ($field as $key => $item) {
+            $item->temporyUrl = Storage::disk('s3')->temporaryUrl($item->image, now()->addMinutes(60));
+        };
+
         return response([
             'success' => true,
             'message' => 'List Semua Posts',

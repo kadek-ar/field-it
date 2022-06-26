@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 {{-- <img style="max-width: 250px;" src="{{ asset('storage/img/'.$item->image) }}" alt=""> --}}
-                                                <img style="max-width: 250px;" src="/uploads/img/{{$item->image}}" alt="">
+                                                <img style="max-width: 250px;" src="{{Storage::disk('s3')->temporaryUrl($item->image, now()->addMinutes(60))}}" alt="">
                                                 <div class="d-flex">
                                                     <div class="m-2">
                                                         <span class="fw-bold">Jam Buka</span>

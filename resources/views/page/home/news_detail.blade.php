@@ -10,7 +10,8 @@
             <h1 class="text-center fw-bold ">{{ $news->title }}</h1>
         </div>
         <div class="m-auto" style="max-width: 550px;">
-            <img class="text-center w-100" src="/uploads/img/{{$news->image}}" alt="">
+            {{-- <img class="text-center w-100" src="/uploads/img/{{$news->image}}" alt=""> --}}
+            <img class="text-center w-100" src="{{Storage::disk('s3')->temporaryUrl($news->image, now()->addMinutes(60))}}" alt="">
         </div>
         <hr>
         <div>

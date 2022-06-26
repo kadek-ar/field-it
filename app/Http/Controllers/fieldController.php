@@ -12,6 +12,7 @@ use App\Models\Order;
 use App\Models\OrderList;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use Illuminate\Support\Facades\Storage;
 
 class fieldController extends Controller
 {
@@ -55,7 +56,17 @@ class fieldController extends Controller
         
 
         // $img_file->storeAs('public/img', $img_name);
-        $img_file->storeAs('img', $img_name, 'public_uploads');
+        // $img_file->storeAs('img', $img_name, 'public_uploads');
+        $path = $img_file->storeAs('img', $img_name, 's3');
+
+        // Storage::disk('s3')->setVisibility($path, 'public');
+
+        // Storage::disk('s3')->temporaryUrl($path, now()->addMinutes(30));
+        // dd(Storage::disk('s3')->temporaryUrl($path, now()->addMinutes(60)));
+
+        // $url = Storage::disk('s3')->url($path);
+
+        // dd(Storage::disk('s3')->url($path));
 
         // dd($path);
         // Storage::disk('public_uploads')->put($path, $file_content);
@@ -74,7 +85,8 @@ class fieldController extends Controller
             'close_time' => $request->close_time,
             // 'category' => "Lapangan",
             'description' => $request->description,
-            'image' => $img_name,
+            // 'image' => $img_name,
+            'image' => $path,
             'status' => 1,
             'lat' => $latlang["lat"],
             'lng' => $latlang["lng"]
