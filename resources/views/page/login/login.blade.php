@@ -8,10 +8,16 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
  </head>
  <body>
- <div class="login_box">
+ <div class="bg-white login_box">
 
- 	<img class="user" src="/img/letterR.png" alt="img woman">
- 	<h3>Login</h3>
+ 	{{-- <img class="user" src="/img/letterR.png" alt="img woman"> --}}
+	<div style="position: absolute;
+				margin-left: 73%;
+				width: 115px;
+				top: 108px">
+		<img class="user h-auto text-center" style="width: 163px" src="/img/logops.png" alt="img woman">
+	</div>
+ 	<h3 style="padding-top: 82px" class="text-black">Login</h3>
 
 	@if(session()->has('loginError'))
 		<div class="alert alert-danger alert-dismissible fade show" role="start">
@@ -22,20 +28,24 @@
 
  	<form action="/login" method="post">
 		@csrf
-		<label>Email</label>
-		<input type="email" name="email" id="email" placeholder="Enter Email" value="{{ old('email') }}" class="form-control @error('email')is-invalid @enderror"  required>
-		@error('email')
-			<div class="invalid-feedback">
-				{{ $message }}
-			</div>
-		@enderror
-		<label>Password</label>
-		<input type="password" name="password" id="password" placeholder="Password"><br>
+		<div class="mb-3">
+			<label class="text-black">Email</label>
+			<input type="email" name="email" id="email" placeholder="Enter Email" value="{{ old('email') }}" class="form-control @error('email')is-invalid @enderror"  required>
+			@error('email')
+				<div class="invalid-feedback">
+					{{ $message }}
+				</div>
+			@enderror
+		</div>
+		<div>
+			<label class="text-black">Password</label>
+			<input type="password" name="password" id="password" class="form-control" placeholder="Password"><br>
+		</div>
 
-		<div id="errorbox"></div><br>
+		<div id="errorbox"></div>
 
 		<!-- <a href="homepage"> -->
-		<input type="submit" name="" value="LOGIN"><br><br>
+		<input type="submit" name="" class="btn btn-primary w-100" value="LOGIN"><br><br>
 		<!-- </a> -->
 
 		<div class="form-group">
