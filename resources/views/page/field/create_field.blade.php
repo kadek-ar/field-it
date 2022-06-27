@@ -65,20 +65,21 @@
                     <input class="form-control" type="file" name="schedule" id="formFile">
                 </div> --}}
 
-                <button type="submit" class="btn btn-outline-primary">Continue</button>
+                <button type="submit" class="btn btn-success fw-bold mb-5 ps-4 pe-4">Continue</button>
 
             </form>
         </div>
 
         @else
-        <div class="d-flex justify-content-between">
-            <h1>Create Your Field Type</h1>
+        <div class="d-flex justify-content-center mt-3">
+            <h1 class="text-center fw-bold">Create Field Type</h1>
             {{-- <div>
                 @isset($field_type)
                     <a href="/field/schedule" class="btn btn-outline-primary">Manage Your Schedule</a>
                 @endisset
             </div> --}}
         </div>
+        <hr>
         <form class="mb-4" action="/create/type" method="post">
             @csrf
             <div class="mb-3">
@@ -92,10 +93,14 @@
                     <input type="number" name="price" class="form-control" placeholder="price" aria-label="Username" aria-describedby="basic-addon1" required>
                 </div>
             </div>
-            <button class="btn btn-outline-primary" type="submit">Create Type</button>
+            <div class="text-center">
+                <button class="btn btn-success fw-bold ps-4 pe-4" type="submit">Create Type</button>
+            </div>
+            {{-- <hr style="margin-top: 35px"> --}}
+
         </form>
         @isset($field_type)
-            <table class="table table-striped">
+            <table class="table table-striped mt-5">
                 <thead class="table-success">
                     <tr>
                         <th scope="col">No.</th>

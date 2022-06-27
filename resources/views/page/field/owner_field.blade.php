@@ -24,7 +24,8 @@
         @else
         <div class="shadow-lg p-3">
             <div>
-                <h1 class="ms-2 fw-bold mb-5">Field</h1>
+                <h1 class="ms-2 text-center fw-bold ">{{$field->name}}</h1>
+                <hr>
                 <div class="d-flex mb-4">
                     <div class="w-50">
                         {{-- <img class="w-100 ms-2" src=" {{ asset('storage/img/'.$field->image) }} " alt=""> --}}
@@ -33,8 +34,8 @@
                     </div>
                     <div class="w-50 ps-4">
                         <div class="m-2">
-                            <h2 class="mb-3 fw-bold">{{$field->name}}</h2>
-                            <hr>
+                            {{-- <h2 class="mb-3 fw-bold">{{$field->name}}</h2>
+                            <hr> --}}
                             <span class="fw-bold fs-5">Open Time</span>
                             <div class="d-flex mt-2">
                                 <div>{{ \Carbon\Carbon::parse($field->open_time)->format('H:00') }}</div> 
@@ -46,6 +47,11 @@
                         <div class="ms-2">
                             <span class="fw-bold fs-5">Address</span>
                             <p class="mt-2">{{ $field->address}}</p>
+                        </div>
+
+                        <div class="ms-2">
+                            <span class="fw-bold fs-5">Description</span>
+                            <p class="mt-2">{{ $field->description}}</p>
                         </div>
                         
                     </div>
@@ -63,15 +69,12 @@
                     </div>
                 </div> --}}
 
-                <div class="ms-2">
-                    <span class="fw-bold fs-5">Description</span>
-                    <p class="mt-2">{{ $field->description}}</p>
-                </div>
+                
 
             </div>
 
             <div class="ms-2">
-                <span class="fw-bold fs-5">Location On Map</span>
+                <span class="fw-bold fs-5">Location on Map</span>
                 <div id="map" class="mt-3"></div>
             </div>
 
@@ -205,6 +208,7 @@
                 const marker = new google.maps.Marker({
                     position: uluru,
                     map: map,
+                    icon: '/img/field_marker.png'
                 });
             }
 

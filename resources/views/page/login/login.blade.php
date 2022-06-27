@@ -56,7 +56,7 @@
 		<div id="errorbox"></div>
 
 		<!-- <a href="homepage"> -->
-		<input type="submit" name="" class="btn btn-primary w-100" value="LOGIN"><br><br>
+		<input type="submit" name="" class="btn btn-success w-100" value="LOGIN"><br><br>
 		<!-- </a> -->
 
 		{{-- <div class="form-group">

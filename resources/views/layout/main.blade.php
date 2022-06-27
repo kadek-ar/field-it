@@ -28,7 +28,8 @@
     
     <style>
         .main-bg{
-            background: #F5EEDC;
+            /* background: #F5EEDC; */
+            background: #DDDDDD;
         }
         .bg-main-green{
             background: #1A4D2E;
@@ -91,7 +92,7 @@
                                 </svg>
                                 <ul class="dropdown-menu dropdown-menu-lg-end pb-0 overflow-hidden" aria-labelledby="dropdownMenuButton1">
                                     <li class="text-center"><span class="nav-link" >Welcome, {{ auth()->user()->name }}</span></li>
-                                    <li class="text-center text-center bg-primary text-white">
+                                    <li class="text-center text-center bg-danger text-white">
                                         <form action="/logout" method="post">
                                             @csrf
                                             <li class="nav-item pb-1">

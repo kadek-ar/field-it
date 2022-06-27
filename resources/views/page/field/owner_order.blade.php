@@ -6,13 +6,17 @@
 
 
 <div class="container">
-    <h1 class="mb-3">Order List</h1>
-    <div class="mb-3">
+    {{-- <h1 class="mb-3">Order List</h1> --}}
+    <div class="d-flex justify-content-center mt-3">
+        <h1 class="text-center fw-bold">Order List</h1>
+    </div>
+    <hr>
+    <div class="mb-3 fw-bold mt-4">
         Revenue From this month : Rp.{{$total_price}}
     </div>
     <table class="table table-bordered">
         <thead>
-            <tr>
+            <tr class="text-center">
                 <th scope="col">ID</th>
                 <th scope="col">Buyer Name</th>
                 <th scope="col">Price</th>

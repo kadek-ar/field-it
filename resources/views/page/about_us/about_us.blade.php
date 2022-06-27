@@ -7,8 +7,9 @@
 <div class="container shadow-lg p-4 rounded bg-white">
     <div class="pb-5">
         <div class="topic">
-            <h1 class="text-center fw-bold fst-italic pb-1">About Us</h1>
+            <h1 class="text-center fw-bold pb-1">ABOUT US</h1>
         </div>
+        <hr>
         <div class="container mt-5">
             <div class="mb-5 text-center">
                 <img class="w-25" src="/img/logops.png" alt="">

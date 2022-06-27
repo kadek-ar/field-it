@@ -9,13 +9,13 @@
         <div class="bg-img-home" style="height: 250px;">
             <div style="padding-top: 70px;">
                 <div class="mb-5 search-card">
-                    <h2 class="text-center mb-3 fw-bold text-white">Search Field</h2>
-                    <input class="form-control" type="text" v-model="search" @input="searchField()">
+                    <h2 class="text-center mb-3 fw-bold text-white">SEARCH FIELD</h2>
+                    <input class="form-control" type="text" placeholder="Type field name or address" v-model="search" @input="searchField()">
                 </div>
             </div>
         </div> 
         <div class="topic bg-main-green text-white mb-4">
-            <div class="container text-decoration-underline fs-2 fw-bold fst-italic pb-2">Nearby</div>
+            <div class="container text-center fs-2 fw-bold fst-italic pb-2">Nearby Field</div>
         </div>
         <div class="container">
             <div v-for="item in fields" class="card shadow-lg p-3 mb-3">

@@ -22,7 +22,7 @@
         this.hour = hour;
         this.field_type = field_type;
         this.price = price;
-        document.getElementById('modalTitle').innerHTML = "Manage For " + field_type
+        document.getElementById('modalTitle').innerHTML = "Manage for " + field_type
         if(price != 0 && price != ''){
             document.getElementById('price').setAttribute('value',price)
         }
@@ -77,11 +77,11 @@
                 <h5 class="modal-title" id="modalTitle"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <button id="btnPrice" class="btn btn-primary" data-bs-target="#modalEdit2" data-bs-toggle="modal">Change Price For This Column</button>
+            <div class="modal-body text-center">
+                <button id="btnPrice" class="btn btn-success mb-3" data-bs-target="#modalEdit2" data-bs-toggle="modal">Change Price</button>
                 <form action="/schedule/update/{{ 2 }}?date={{$date}}" method="post">
                     @csrf
-                    <button type="submit" class="btn btn-danger" id="btnText">Close For This Column</button>
+                    <button type="submit" class="btn btn-danger" id="btnText">Close Schedule</button>
                     <input id="typeFieldId2" name="id" type="text" class="d-none">
                     <input id="time2" name="time" type="text" class="d-none">
                     <input id="schedule_id2" name="schedule_id" type="text" class="d-none">
@@ -125,7 +125,11 @@
 </div>
 
 <div class="container">
-    <h1 class="mb-5">Manage Your Schedule</h1>
+    {{-- <h1 class="mb-5">Manage Your Schedule</h1> --}}
+    <div class="d-flex justify-content-center mt-3">
+        <h1 class="text-center fw-bold">Manage Schedule</h1>
+    </div>
+    <hr>
     <div class="mb-3 d-flex align-item-center">
         <label for="" class="fs-3 fw-bold me-3">Date : </label>
         <input type="date" value="{{$date}}" onchange="getChange()" id="date" name="date" class="form-control" style="max-width: 250px;" id="date">
@@ -137,8 +141,8 @@
     <div>
         <table class="table table-striped table-bordered table-col-hover">
             <thead>
-                <tr>
-                    <th scope="col">#</th>
+                <tr class="text-center">
+                    <th scope="col">Time</th>
                     @foreach ($field_type as $item)
                         <th scope="col" >
                             <div>{{ $item->name }}</div>
@@ -149,7 +153,7 @@
             </thead>
             <tbody class="hide-hour">
                 @foreach ($schedule_time as $time)
-                    <tr>
+                    <tr class="text-center">
                         <th scope="row">{{\Carbon\Carbon::parse($time->open_time)->format('H:00')}} - {{\Carbon\Carbon::parse($time->close_time)->format('H:00')}}</th>
                         @foreach ($field_type as $key => $item)
                             @isset($schedule)

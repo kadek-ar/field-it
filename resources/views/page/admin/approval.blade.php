@@ -12,7 +12,7 @@
                     <th>User Name</th>
                     <th>Company Name</th>
                     <th>Field Name</th>
-                    <th>action</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

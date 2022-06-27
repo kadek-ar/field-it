@@ -73,14 +73,16 @@
 
 
 
-    <div class="container">
-        <h1>Maps</h1>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" id="search" placeholder="Search Location" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-primary" onclick="searchLocation()" type="button" id="button-addon2">Search</button>
+    <div class="container mt-1">
+        <div class="shadow-lg p-4 rounded bg-white">
+            <h1 class="mb-3 text-center fw-bold">MAPS</h1>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="search" placeholder="Search Location" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-success fw-bold fs-5 ps-4 pe-4" onclick="searchLocation()" type="button" id="button-addon2">Search</button>
+            </div>
+        
+            <div id="map"></div>
         </div>
-    
-        <div id="map"></div>
 
     </div>
 

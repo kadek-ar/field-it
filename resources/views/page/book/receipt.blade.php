@@ -25,20 +25,25 @@
 
     <div class="container">
 
-        <div>
-            <h1 class="text-center">Receipt</h1>
-            <h5 class="text-center mb-4">Booking ID</h5>
-            <h5 class="text-center">FIT-{{$order->id}}</h5>
+      
+      <div class="custom-card bg-white shadow-lg p-4">
+          <div>
+              <h1 class="text-center fw-bold">RECEIPT</h1>
+              <h5 class="text-center mb-2">Booking ID</h5>
+              <h5 class="text-center">FIT-{{$order->id}}</h5>
+          </div>
+          <hr>
+          <div class="d-flex mb-2">
+            <div style="width: 100px;">Field Name </div>
+            <div>: {{$field->name}}</div>
         </div>
-
-        <div class="custom-card bg-white shadow-lg p-4">
-            <div class="d-flex mb-2">
-                <div style="width: 100px;">Date  </div>
-                <div>: {{$date}}</div>
-            </div>
             <div class="d-flex mb-2">
                 <div style="width: 100px;">Location </div>
                 <div>: {{$field->address}}</div>
+            </div>
+            <div class="d-flex mb-2">
+                <div style="width: 100px;">Date  </div>
+                <div>: {{$date}}</div>
             </div>
             <div class="d-flex mb-4">
                 <div style="width: 100px;">Duration </div> 
@@ -68,18 +73,26 @@
                 </tbody>
               </table>
               <div class="mb-3">Total Price : Rp.{{$order->total_price}}</div>
-              @if($order->payment_status == 1)
+              {{-- @if($order->payment_status == 1)
                 <div class="mb-3">*Note : If Status in pop up payment Say "Payment Success", click cancel button</div>
-              @endif
-              <div class="d-grid gap-2">
-                  @if($order->payment_status == 2)
+              @endif --}}
+              {{-- <div class="d-grid gap-2"> --}}
+                {{-- {{dd(json_decode($order->json_result, true))}} --}}
+                @php
+                  if($order->json_result != null){
+                    $json_pay = json_decode($order->json_result, true);
+                  }
+                  // dd($json_pay["transaction_status"]);
+                @endphp
+              <div class="text-center">
+                  @if($order->json_result != null && $json_pay["transaction_status"] == "settlement")
                     <h3 class="text-success text-center">Payment Success</h3>
                   @else
-                  <button class="btn btn-success" id="pay-button">
+                  <button class="btn btn-success fw-bold fs-5 ps-4 pe-4" id="pay-button">
                         @if ($order->json_result == null)
-                          Pay Now 
+                          PAY NOW 
                         @else
-                          Check Payment 
+                          CHECK PAYMENT
                         @endif
                       </button>
                   @endif
@@ -157,12 +170,12 @@
           },
           onClose: function(){
             /* You may add your own implementation here */
-            console.log(result.status_message[0]);
-            if(result.status_message[0] == "transaction has been succeed"){
-              document.getElementById('status').value = 2
-            }
-            sendresponse(result)
-            console.log(result);
+            // console.log(result.status_message[0]);
+            // if(result.status_message[0] == "transaction has been succeed"){
+            //   document.getElementById('status').value = 2
+            // }
+            // sendresponse(result)
+            // console.log(result);
             // alert('you closed the popup without finishing the payment');
           }
         })

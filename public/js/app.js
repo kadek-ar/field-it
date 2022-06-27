@@ -28706,7 +28706,7 @@ var render = function () {
         _c("div", { staticStyle: { "padding-top": "70px" } }, [
           _c("div", { staticClass: "mb-5 search-card" }, [
             _c("h2", { staticClass: "text-center mb-3 fw-bold text-white" }, [
-              _vm._v("Search Field"),
+              _vm._v("SEARCH FIELD"),
             ]),
             _vm._v(" "),
             _c("input", {
@@ -28719,7 +28719,10 @@ var render = function () {
                 },
               ],
               staticClass: "form-control",
-              attrs: { type: "text" },
+              attrs: {
+                type: "text",
+                placeholder: "Type field name or address",
+              },
               domProps: { value: _vm.search },
               on: {
                 input: [
@@ -28826,11 +28829,8 @@ var staticRenderFns = [
     return _c("div", { staticClass: "topic bg-main-green text-white mb-4" }, [
       _c(
         "div",
-        {
-          staticClass:
-            "container text-decoration-underline fs-2 fw-bold fst-italic pb-2",
-        },
-        [_vm._v("Nearby")]
+        { staticClass: "container text-center fs-2 fw-bold fst-italic pb-2" },
+        [_vm._v("Nearby Field")]
       ),
     ])
   },

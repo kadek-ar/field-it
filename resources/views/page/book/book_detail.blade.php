@@ -92,13 +92,13 @@
         let text = ""
         let tmpPrice = 0;
         for (var i = 0; i < time.length; i++){
-            text += "<li class='list-group-item ps-0 border-0' >" + time[i].open_time +" - " + addHours(time[i].open_time,1) + " " + time[i].field_type_name + "</li>"
+            text += "<li class='list-group-item ps-0 border-0' >" + time[i].open_time +" - " + addHours(time[i].open_time,1) + " <span class='me-3 ms-3'>" + time[i].field_type_name + "</span> " + "Rp "+ time[i].price +"</li>"
             tmpPrice = tmpPrice + time[i].price
         }
 
-        document.getElementById("totalHours").innerHTML = time.length + " Hours";
+        document.getElementById("totalHours").innerHTML = "Total Duration = " + time.length + " Hours";
         document.getElementById("list").innerHTML = text;
-        document.getElementById("priceTotal").innerHTML = "Total Price = " + tmpPrice;
+        document.getElementById("priceTotal").innerHTML = "Total Price = Rp " + tmpPrice;
     }
 
     
@@ -164,8 +164,8 @@
     <div class="bg-white container p-4">
         <div class="mt-3 mb-3" id="map"></div>
 
-        <h2 class="fw-bold fst-italic text-decoration-underline mb-4">BOOK DETAIL</h2>
-
+        <h2 class="fw-bold text-center mt-5 fst-italic mb-4">BOOK DETAIL</h2>
+        <hr>
         <div class="mb-3align-item-center mb-4">
             <label for="" class="fs-4 mb-2 fw-bold me-3">CHOOSE DATE</label>
             <input type="date" value="{{$date}}" onchange="getChange()" id="date" name="date" class="form-control" style="max-width: 250px;">
@@ -177,8 +177,8 @@
         <div>
             <table class="table table-striped table-bordered table-col-hover">
                 <thead>
-                    <tr>
-                        <th scope="col">#</th>
+                    <tr class="text-center">
+                        <th scope="col">Time</th>
                         @foreach ($field_type as $item)
                             <th scope="col" >
                                 <div>{{ $item->name }}</div>
@@ -190,7 +190,7 @@
                 <tbody class="hide-hour">
                     @foreach ($schedule_time as $time)
                         <tr>
-                            <th scope="row">{{\Carbon\Carbon::parse($time->open_time)->format('H:00')}} - {{\Carbon\Carbon::parse($time->close_time)->format('H:00')}}</th>
+                            <th class="text-center" scope="row">{{\Carbon\Carbon::parse($time->open_time)->format('H:00')}} - {{\Carbon\Carbon::parse($time->close_time)->format('H:00')}}</th>
                             @foreach ($field_type as $key => $item)
                                 @isset($schedule)
                                     @php
@@ -269,10 +269,10 @@
 
         <div id="book" class="d-none">
             <div class="w-50">
-                <h3 class="fw-bold mb-3">TOTAL DURATION CHOOSED</h3>
-                <div id="totalHours" class="fw-bold"></div>
+                <h3 class="fw-bold mb-3">ORDER DETAIL</h3>
                 <ul id="list" class="list-group list-group-flush"></ul>
-                <hr>
+                <div id="totalHours" class="fw-bold"></div>
+                
                 <div class="fw-bold" id="priceTotal"></div>
             </div>
             <div class="text-center">

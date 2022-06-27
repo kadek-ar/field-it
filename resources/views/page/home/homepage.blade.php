@@ -55,7 +55,7 @@
                                                 {{-- <img class="img-fluid w-100" src="{{ asset('storage/img/'.$item->image) }}" alt=""> --}}
                                                 {{-- <img class="img-fluid w-100" src="/uploads/img/{{$item->image}}" alt=""> --}}
                                                 <img class="img-fluid w-100" src="{{Storage::disk('s3')->temporaryUrl($item->image, now()->addMinutes(60))}}" alt="">
-                                                <div class="text-center mt-2">{{ $item->title }}</div>
+                                                <div class="text-center mt-2 fw-bold" style="font-size: 16px">{{ $item->title }}</div>
                                             </div>
                                         @endforeach
                                     </div>
@@ -79,14 +79,14 @@
                         
                     <div class="">
                         <div class="topic bg-main-green text-white">
-                            <div class="text-center fs-2 fw-bold fst-italic pb-2">Maps</div>
+                            <div class="text-center fs-2 fw-bold fst-italic pb-2">MAPS</div>
                         </div>
                         <div class="container" id="map"></div>
                     </div>
 
                     <div class="pb-5">
                         <div class="topic bg-main-green text-white">
-                            <div class="text-center fs-2 fw-bold fst-italic pb-1">About Us</div>
+                            <div class="text-center fs-2 fw-bold fst-italic pb-1">ABOUT US</div>
                         </div>
                         <div class="container mt-5">
                             <div class="mb-5">
