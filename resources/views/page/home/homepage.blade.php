@@ -112,6 +112,10 @@
         window.location = '/news?id='+id
     }
 
+    function gotoField(loc){
+        window.location = '/fieldsTo/' + loc.id;
+    }
+
     var latitude = -6.200000;
     var longitude = 106.816666;
 
@@ -144,6 +148,13 @@
         console.log("loc ", loc);
 
         var marker, i, latLng;
+        var activeInfoWindow ;	
+
+        // create an InfoWindow - for mouseover
+        var infoWnd = new google.maps.InfoWindow();
+    
+        // create an InfoWindow -  for mouseclick
+        var infoWnd2 = new google.maps.InfoWindow();
 
         for( i = 0; i < loc.length; i++){
             // latLng = { lat: loc.lat, lng: loc.lng };
@@ -152,6 +163,26 @@
                 map: map,
                 icon: '/img/field_marker.png'
             });
+
+            google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+                return function() {
+                    infoWnd.setContent(loc[i].name);
+                    infoWnd.open(map, marker);
+                }
+            })(marker, i));							
+			
+			// on mouseout (moved mouse off marker) make infoWindow disappear
+			google.maps.event.addListener(marker, 'mouseout', function() {
+				infoWnd.close();	
+			});
+
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    // infoWnd.setContent(loc[i].name);
+                    // infoWnd.open(map, marker);
+                    gotoField(loc[i]);
+                }
+            })(marker, i));	
         }
     }
 
