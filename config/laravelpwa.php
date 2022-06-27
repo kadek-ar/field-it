@@ -14,13 +14,19 @@ return [
         "capture_links" => "existing_client_event",
         "url_handlers" => [
             [
-                "origin" => "https://contoso.com"
+                "origin" => "https://field-it.herokuapp.com/"
             ],
             [
-                "origin" => "https://conto.so"
+                "origin" => "https://*field-it.herokuapp.com/"
             ],
+        ],
+        "web_apps" => [
             [
-                "origin" => "https://*.contoso.com"
+                "manifest" => "https://field-it.herokuapp.com/manifest.json",
+                "details" => [
+                    "paths" => ["/*"],
+                    "exclude_paths" => ["/internal/*"]
+                ]
             ]
         ],
         'icons' => [
