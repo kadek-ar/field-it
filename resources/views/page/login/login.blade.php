@@ -49,11 +49,11 @@
 		<input type="submit" name="" class="btn btn-primary w-100" value="LOGIN"><br><br>
 		<!-- </a> -->
 
-		<div class="form-group">
+		{{-- <div class="form-group">
 			<label class="label-agree-term"> <span> <span> </span></span>
 				<a href="{{ url('/forgot_password') }}">Forgot Password</a>
 			</label>
-		</div>
+		</div> --}}
 		<a href="signup">Not registered? <span>Create an account</span></a>
 
 	</form>

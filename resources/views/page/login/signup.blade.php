@@ -72,7 +72,7 @@
 		</a> --}}
 
 	</form>
-	<a href="login">Existing user, Login </a>
+	<a href="/">Existing user, Login </a>
  </div>
  </body>
  </html>
