@@ -1,0 +1,17 @@
+{
+    "name": "Field-It App",
+    "short_name": "Field-It",
+    "start_url": "/",
+    "background_color": "#1A4D2E",
+    "description": "Field-It App Demo",
+    "display": "fullscreen",
+    "theme_color": "#1A4D2E",
+    "icons": [
+        {
+            "src": "/images/icons/logops-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
