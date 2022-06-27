@@ -5,7 +5,7 @@ return [
     'manifest' => [
         'name' => env('APP_NAME', 'Field-It App'),
         'short_name' => 'Field-It',
-        'start_url' => '/',
+        'start_url' => 'https://field-it.herokuapp.com/',
         'background_color' => '#1A4D2E',
         'theme_color' => '#1A4D2E',
         'display' => 'standalone',
