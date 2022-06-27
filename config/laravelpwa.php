@@ -5,12 +5,24 @@ return [
     'manifest' => [
         'name' => env('APP_NAME', 'Field-It App'),
         'short_name' => 'Field-It',
-        'start_url' => 'https://field-it.herokuapp.com/',
+        'start_url' => '/',
         'background_color' => '#1A4D2E',
         'theme_color' => '#1A4D2E',
         'display' => 'standalone',
         'orientation'=> 'any',
         'status_bar'=> 'black',
+        "capture_links" => "existing_client_event",
+        "url_handlers" => [
+            [
+                "origin" => "https://contoso.com"
+            ],
+            [
+                "origin" => "https://conto.so"
+            ],
+            [
+                "origin" => "https://*.contoso.com"
+            ]
+        ],
         'icons' => [
             '72x72' => [
                 'path' => '/images/icons/logops-72x72.png',
