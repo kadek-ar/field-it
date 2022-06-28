@@ -127,12 +127,12 @@ class bookController extends Controller
             "payment_status" => 1,
             "snap_token" => $snapToken,
         ]);
-
+        
         foreach($order_list as $item){
             OrderList::create([
                 "order_id" => Order::latest()->first()->id,
                 "field_types_id" => $item->field_type_id,
-                "time" => $item->open_time,
+                "time" => Carbon::parse($item->open_time)->format("H:00:00"),
                 "price" => $item->price
             ]);
         }
