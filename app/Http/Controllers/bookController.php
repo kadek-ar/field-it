@@ -129,10 +129,14 @@ class bookController extends Controller
         ]);
         
         foreach($order_list as $item){
+            $str = $item->open_time;
+            if(strrpos($str, ' ') != false){
+                $str = substr($str, 0, strrpos($str, ' '));
+            }
             OrderList::create([
                 "order_id" => Order::latest()->first()->id,
                 "field_types_id" => $item->field_type_id,
-                "time" => Carbon::parse($item->open_time)->format("H:00:00"),
+                "time" => Carbon::parse($str)->format("H:00:00"),
                 "price" => $item->price
             ]);
         }
