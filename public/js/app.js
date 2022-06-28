@@ -5451,6 +5451,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5517,7 +5519,7 @@ __webpack_require__.r(__webpack_exports__);
 
         _this2.getFields();
       }, function (error) {
-        console.log(error.message);
+        console.log("error Location = ", error.message);
       });
     },
     getDistanceFromLatLonInKm: function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
@@ -28751,10 +28753,19 @@ var render = function () {
       _vm._l(_vm.fields, function (item) {
         return _c("div", { staticClass: "card shadow-lg p-3 mb-3" }, [
           _c("div", { staticClass: "d-flex" }, [
-            _c("img", {
-              staticStyle: { "max-width": "250px" },
-              attrs: { src: item.temporyUrl, alt: "" },
-            }),
+            _c(
+              "div",
+              {
+                staticClass: "overflow-hidden",
+                staticStyle: { width: "325px", height: "137px" },
+              },
+              [
+                _c("img", {
+                  staticStyle: { "max-width": "250px" },
+                  attrs: { src: item.temporyUrl, alt: "" },
+                }),
+              ]
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "ps-3 w-100" }, [
               _c("span", { staticClass: "fw-bolder fs-3" }, [
