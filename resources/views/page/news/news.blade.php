@@ -18,7 +18,7 @@
                     <!-- Slides -->
                     @foreach ($news as $item)
                         {{-- <div class="swiper-slide" onclick="gotoNews('{{$item->id}}')"> --}}
-                        <div class="swiper-slide" onclick="openNews('{{$item->title}}', '{{Storage::disk('s3')->temporaryUrl($item->image, now()->addMinutes(60))}}', '{{$item->description}})' ) ">
+                        <div class="swiper-slide" onclick="openNews('{{$item->title}}', '{{Storage::disk('s3')->temporaryUrl($item->image, now()->addMinutes(60))}}', '{{$item->description}}' ) ">
                             {{-- <img class="img-fluid w-100" src="{{ asset('storage/img/'.$item->image) }}" alt=""> --}}
                             {{-- <img class="img-fluid w-100" src="/uploads/img/{{$item->image}}" alt=""> --}}
                             <img class="img-fluid w-100" src="{{Storage::disk('s3')->temporaryUrl($item->image, now()->addMinutes(60))}}" alt="">
@@ -49,7 +49,7 @@
                 <hr>
                 <div>
                     <h1 class="mb-3 fw-bold " id="title"></h1>
-                    <p id="desc">  </p>
+                    <p id="desc"></p>
                 </div>
         
             </div>
@@ -74,6 +74,7 @@
         document.getElementById("title").innerHTML = title
         document.getElementById("img").src = img
         document.getElementById("desc").innerHTML = desc
+        console.log("desc ", desc);
         document.getElementById("newsCard").classList.remove("d-none");
     }
 
