@@ -33,7 +33,13 @@
                     <td>{{ $item->total_price }}</td>
                     <td>{{ $item->payment_type }}</td>
                     <td>{{ $item->book_date }}</td>
-                    @if ($item->payment_status == 2)
+                    @php
+                        if($item->json_result != null){
+                            $json_pay = json_decode($item->json_result, true);
+                        }
+                        // dd($json_pay["transaction_status"]);
+                    @endphp
+                    @if ($item->json_result != null && $json_pay["transaction_status"] == "settlement")
                         <td> <span class="badge text-bg-success">Payment Success</span> </td>
                     @else
                         <td> <span class="badge text-bg-primary">Pending payment</span> </td>

@@ -18,8 +18,14 @@
                         <div class="ps-3">
                             <div class="d-flex justify-content-between">
                                 <span class="fw-bolder fs-3">FT-{{ $item->id }}</span>
+                                @php
+                                    if($item->json_result != null){
+                                        $json_pay = json_decode($item->json_result, true);
+                                    }
+                                    // dd($json_pay["transaction_status"]);
+                                @endphp
                                 <div>
-                                    @if ($item->payment_status == 2)
+                                    @if ($item->json_result != null && $json_pay["transaction_status"] == "settlement")
                                         <span class="badge text-bg-success">Payment Success</span>
                                     @else
                                         <span class="badge text-bg-primary">Pending Payment</span>
