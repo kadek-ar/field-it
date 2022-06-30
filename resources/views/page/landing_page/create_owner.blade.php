@@ -11,7 +11,7 @@
             <form action="/owner/create" method="post">
                 @csrf
                 <div class="mb-3">
-                    <input type="text" name="company_name" class="form-control" id="exampleFormControlInput1" placeholder="Type Your Company Name">
+                    <input type="text" name="company_name" class="form-control" id="exampleFormControlInput1" placeholder="Type Your Company Name" required>
                 </div>
         
                 <div class="d-grid gap-2 col-6 mx-auto mt-5">

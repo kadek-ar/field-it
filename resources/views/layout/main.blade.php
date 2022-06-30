@@ -123,7 +123,7 @@
     </nav>
     <div class="mt-5 pt-4">
         @if(Auth::user()->status == 2)
-            <h1 class="text-center">Sorry, You can't access to this page if you role is "Owner"</h1>
+            <h1 class="text-center">Sorry, you can't access to this page because your role is “Owner”!</h1>
         @else
             @yield('content')
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjmq12Yg6RU5UhDvdeBPlXcE6WUulIT40&callback=initMap"></script>
