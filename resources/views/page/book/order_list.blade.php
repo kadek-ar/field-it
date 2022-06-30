@@ -10,7 +10,7 @@
                 <h1 class="mb-5 text-center fw-bold">ORDER LIST</h1>
     
                 @if( !isset($order) || count($order) == 0)
-                    <h3 class="text-center"> You Don't have any order</h3>
+                    <h3 class="text-center"> You don't have any order!</h3>
                 @else
                     @foreach ($order as $item)
                         <div class="card p-3 mb-3">
