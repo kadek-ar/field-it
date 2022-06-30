@@ -59,6 +59,7 @@ Route::post('/admin/approve/{id}', [adminController::class, 'approve']);
 Route::post('/admin/reject/{id}', [adminController::class, 'reject']);
 Route::get('/admin/news', [adminController::class, 'news']);
 Route::post('/admin/news/upload', [adminController::class, 'newsUpload']);
+Route::get('/admin/news/delete/{id}', [adminController::class, 'newsDelete']);
 
 Route::get('/field/list', [bookController::class, 'listField']);
 Route::get('/field/book/detail', [bookController::class, 'book']);

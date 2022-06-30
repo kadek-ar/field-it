@@ -35,7 +35,8 @@ class adminController extends Controller
     }
 
     public function news(){
-        return view("page.admin.news");
+        $news = News::all();
+        return view("page.admin.news",[ "news" => $news ]);
     }
 
     public function newsUpload(Request $request){
@@ -68,6 +69,15 @@ class adminController extends Controller
         ]);
         
         alert()->success('Success', 'News Has been Uploaded');
+        return redirect('/admin/news');
+    }
+
+    function newsDelete($id){
+        // dd($id);
+        $news = News::find($id);
+        $news->delete();
+
+        alert()->success('Success', 'News Has been Deleted');
         return redirect('/admin/news');
     }
 }
