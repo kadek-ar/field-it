@@ -5540,6 +5540,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.getLocation();
+    document.getElementById("ddUser").addEventListener("click", function () {
+      document.getElementById("ddUser").toggleAttribute("aria-expanded", "true");
+      document.getElementById("ddUser").classList.toggle("show");
+      document.getElementById("ddUserBtn").toggleAttribute("data-bs-popper", "static");
+      document.getElementById("ddUserBtn").classList.toggle("show"); // console.log(document.getElementById("ddUser"));
+      // console.log(document.getElementById("ddUserBtn"));
+    });
   }
 });
 

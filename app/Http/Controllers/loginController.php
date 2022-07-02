@@ -33,7 +33,7 @@ class loginController extends Controller
             }
         }
         
-        return back()->with('loginError', 'Gagal Untuk Login!');
+        return back()->with('loginError', 'Your email or password is incorrect. Please try again.');
 
     }
 

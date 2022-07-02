@@ -12,7 +12,7 @@
     </div>
     <hr>
     @if(!isset($order) || count($order) == 0)
-        <h3 class="text-center"> You Don't have any order</h3>
+        <h3 class="text-center">You don't have any order!</h3>
     @else
         <div class="mb-3 fw-bold mt-4">
             Revenue From this month : Rp.{{$total_price}}
