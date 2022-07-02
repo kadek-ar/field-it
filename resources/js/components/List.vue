@@ -1,4 +1,59 @@
 <style>
+    .lds-ellipsis {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+    .lds-ellipsis div {
+        position: absolute;
+        top: 33px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #1A4D2E;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+    .lds-ellipsis div:nth-child(1) {
+        left: 8px;
+        animation: lds-ellipsis1 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(2) {
+        left: 8px;
+        animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(3) {
+        left: 32px;
+        animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(4) {
+        left: 56px;
+        animation: lds-ellipsis3 0.6s infinite;
+    }
+    @keyframes lds-ellipsis1 {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    @keyframes lds-ellipsis3 {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0);
+        }
+    }
+        @keyframes lds-ellipsis2 {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(24px, 0);
+        }
+    }
     .search-card{
         max-width: 500px;
         margin: auto;
@@ -18,7 +73,10 @@
             <div class="container text-center fs-2 fw-bold fst-italic pb-2">Nearby Field</div>
         </div>
         <div class="container">
-            <div v-for="item in fields" class="card shadow-lg p-3 mb-3">
+            <div v-if="loader" class="d-flex justify-content-center">
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div v-else v-for="item in fields" class="card shadow-lg p-3 mb-3">
                 <div class="d-flex">
                     <!-- <img style="max-width: 250px;" :src="'../storage/img/'+item.image" alt=""> -->
                     <!-- <img style="max-width: 250px;" :src="'/uploads/img/'+item.image" alt=""> -->
@@ -62,12 +120,14 @@ export default{
                 "id" : null
             },
             search: '',
-            
+            loader: false,
         }
     },
     methods: {
         getFields() {
+            this.loader = true;
             axios.get('/api/fields').then((response) => {
+                this.loader = false;
                 this.fields = response.data.data
                 this.fields.forEach(item => {
                     item.distance = this.getDistanceFromLatLonInKm(this.currentPosition.lat, this.currentPosition.lng, item.lat, item.lng).toFixed(2)
@@ -76,6 +136,17 @@ export default{
                     return a.distance - b.distance;
                 });
                 this.fields_data = this.fields
+            }).catch(error => {
+                this.loader = false;
+                console.log(error)
+                Swal.fire({
+                        title: `Error`,
+                        text: error,
+                        icon: "error",
+                        showCancelButton: true,
+                        confirmButtonText: 'Yes',
+                        cancelButtonText: 'No',
+                })
             })
             // console.log(this.getDistanceFromLatLonInKm(59.3293371,13.4877472,59.3225525,13.4619422));
         },

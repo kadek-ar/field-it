@@ -5453,6 +5453,64 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5466,14 +5524,17 @@ __webpack_require__.r(__webpack_exports__);
       data: {
         "id": null
       },
-      search: ''
+      search: '',
+      loader: false
     };
   },
   methods: {
     getFields: function getFields() {
       var _this = this;
 
+      this.loader = true;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/fields').then(function (response) {
+        _this.loader = false;
         _this.fields = response.data.data;
 
         _this.fields.forEach(function (item) {
@@ -5484,6 +5545,17 @@ __webpack_require__.r(__webpack_exports__);
           return a.distance - b.distance;
         });
         _this.fields_data = _this.fields;
+      })["catch"](function (error) {
+        _this.loader = false;
+        console.log(error);
+        Swal.fire({
+          title: "Error",
+          text: error,
+          icon: "error",
+          showCancelButton: true,
+          confirmButtonText: 'Yes',
+          cancelButtonText: 'No'
+        });
       }); // console.log(this.getDistanceFromLatLonInKm(59.3293371,13.4877472,59.3225525,13.4619422));
     },
     searchField: function searchField() {
@@ -10673,7 +10745,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.search-card{\n    max-width: 500px;\n    margin: auto;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.lds-ellipsis {\n    display: inline-block;\n    position: relative;\n    width: 80px;\n    height: 80px;\n}\n.lds-ellipsis div {\n    position: absolute;\n    top: 33px;\n    width: 13px;\n    height: 13px;\n    border-radius: 50%;\n    background: #1A4D2E;\n    -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);\n            animation-timing-function: cubic-bezier(0, 1, 1, 0);\n}\n.lds-ellipsis div:nth-child(1) {\n    left: 8px;\n    -webkit-animation: lds-ellipsis1 0.6s infinite;\n            animation: lds-ellipsis1 0.6s infinite;\n}\n.lds-ellipsis div:nth-child(2) {\n    left: 8px;\n    -webkit-animation: lds-ellipsis2 0.6s infinite;\n            animation: lds-ellipsis2 0.6s infinite;\n}\n.lds-ellipsis div:nth-child(3) {\n    left: 32px;\n    -webkit-animation: lds-ellipsis2 0.6s infinite;\n            animation: lds-ellipsis2 0.6s infinite;\n}\n.lds-ellipsis div:nth-child(4) {\n    left: 56px;\n    -webkit-animation: lds-ellipsis3 0.6s infinite;\n            animation: lds-ellipsis3 0.6s infinite;\n}\n@-webkit-keyframes lds-ellipsis1 {\n0% {\n        transform: scale(0);\n}\n100% {\n        transform: scale(1);\n}\n}\n@keyframes lds-ellipsis1 {\n0% {\n        transform: scale(0);\n}\n100% {\n        transform: scale(1);\n}\n}\n@-webkit-keyframes lds-ellipsis3 {\n0% {\n        transform: scale(1);\n}\n100% {\n        transform: scale(0);\n}\n}\n@keyframes lds-ellipsis3 {\n0% {\n        transform: scale(1);\n}\n100% {\n        transform: scale(0);\n}\n}\n@-webkit-keyframes lds-ellipsis2 {\n0% {\n        transform: translate(0, 0);\n}\n100% {\n        transform: translate(24px, 0);\n}\n}\n@keyframes lds-ellipsis2 {\n0% {\n        transform: translate(0, 0);\n}\n100% {\n        transform: translate(24px, 0);\n}\n}\n.search-card{\n    max-width: 500px;\n    margin: auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28757,85 +28829,91 @@ var render = function () {
     _c(
       "div",
       { staticClass: "container" },
-      _vm._l(_vm.fields, function (item) {
-        return _c("div", { staticClass: "card shadow-lg p-3 mb-3" }, [
-          _c("div", { staticClass: "d-flex" }, [
-            _c(
-              "div",
-              {
-                staticClass: "overflow-hidden",
-                staticStyle: { width: "325px", height: "137px" },
-              },
-              [
-                _c("img", {
-                  staticStyle: { "max-width": "250px" },
-                  attrs: { src: item.temporyUrl, alt: "" },
-                }),
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "ps-3 w-100" }, [
-              _c("span", { staticClass: "fw-bolder fs-3" }, [
-                _vm._v(_vm._s(item.name)),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "d-flex align-items-center" }, [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "bi bi-geo-alt",
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      width: "16",
-                      height: "16",
-                      fill: "currentColor",
-                      viewBox: "0 0 16 16",
+      [
+        _vm.loader
+          ? _c("div", { staticClass: "d-flex justify-content-center" }, [
+              _vm._m(1),
+            ])
+          : _vm._l(_vm.fields, function (item) {
+              return _c("div", { staticClass: "card shadow-lg p-3 mb-3" }, [
+                _c("div", { staticClass: "d-flex" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "overflow-hidden",
+                      staticStyle: { width: "325px", height: "137px" },
                     },
-                  },
-                  [
-                    _c("path", {
-                      attrs: {
-                        d: "M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z",
-                      },
-                    }),
+                    [
+                      _c("img", {
+                        staticStyle: { "max-width": "250px" },
+                        attrs: { src: item.temporyUrl, alt: "" },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ps-3 w-100" }, [
+                    _c("span", { staticClass: "fw-bolder fs-3" }, [
+                      _vm._v(_vm._s(item.name)),
+                    ]),
                     _vm._v(" "),
-                    _c("path", {
-                      attrs: {
-                        d: "M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
-                      },
-                    }),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(item.address))]),
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("span", [
-                  _vm._v("Jarak : " + _vm._s(item.distance) + " Km"),
+                    _c("div", { staticClass: "d-flex align-items-center" }, [
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "bi bi-geo-alt",
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            width: "16",
+                            height: "16",
+                            fill: "currentColor",
+                            viewBox: "0 0 16 16",
+                          },
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              d: "M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("path", {
+                            attrs: {
+                              d: "M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+                            },
+                          }),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(item.address))]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("span", [
+                        _vm._v("Jarak : " + _vm._s(item.distance) + " Km"),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "d-flex justify-content-end" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function ($event) {
+                              return _vm.chooseField(item.id)
+                            },
+                          },
+                        },
+                        [_vm._v("Book Now")]
+                      ),
+                    ]),
+                  ]),
                 ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "d-flex justify-content-end" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-success",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function ($event) {
-                        return _vm.chooseField(item.id)
-                      },
-                    },
-                  },
-                  [_vm._v("Book Now")]
-                ),
-              ]),
-            ]),
-          ]),
-        ])
-      }),
-      0
+              ])
+            }),
+      ],
+      2
     ),
   ])
 }
@@ -28850,6 +28928,17 @@ var staticRenderFns = [
         { staticClass: "container text-center fs-2 fw-bold fst-italic pb-2" },
         [_vm._v("Nearby Field")]
       ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "lds-ellipsis" }, [
+      _c("div"),
+      _c("div"),
+      _c("div"),
+      _c("div"),
     ])
   },
 ]

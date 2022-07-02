@@ -24,6 +24,7 @@
     />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>@yield('header_Page')</title>
     
     <style>
@@ -33,6 +34,9 @@
         }
         .bg-main-green{
             background: #1A4D2E;
+        }
+        .text-main-green{
+            color: #1A4D2E;
         }
         .bg-main-grey{
             background: #DDDDDD;
