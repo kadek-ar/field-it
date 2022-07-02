@@ -51,8 +51,7 @@
                                     <div class="swiper-wrapper">
                                         <!-- Slides -->
                                         @foreach ($news as $item)
-                                            {{-- <div class="swiper-slide" onclick="gotoNews('{{$item->id}}')"> --}}
-                                            <div class="swiper-slide" onclick="openNews( '{{$item->id}}' ) ">
+                                            <div class="swiper-slide" onclick="gotoNews('{{$item->id}}')">
                                                 {{-- <img class="img-fluid w-100" src="{{ asset('storage/img/'.$item->image) }}" alt=""> --}}
                                                 {{-- <img class="img-fluid w-100" src="/uploads/img/{{$item->image}}" alt=""> --}}
                                                 <img class="img-fluid w-100" src="{{Storage::disk('s3')->temporaryUrl($item->image, now()->addMinutes(60))}}" alt="">
@@ -70,24 +69,6 @@
                                     <!-- If we need scrollbar -->
                                     <div class="swiper-scrollbar"></div> --}}
                                 </div>
-                                @foreach ($news as $item)
-                                    <div id="newsCard{{$item->id}}" class="shadow-lg p-4 rounded bg-white mt-5 d-none">
-                                        {{-- <div class="topic mb-5">
-                                            
-                                        </div> --}}
-                                        <div class="m-auto" style="max-width: 550px;">
-                                            {{-- <img class="text-center w-100" src="/uploads/img/{{$news->image}}" alt=""> --}}
-                                            {{-- <img class="text-center w-100" src="{{Storage::disk('s3')->temporaryUrl($news->image, now()->addMinutes(60))}}" alt=""> --}}
-                                            <img class="text-center w-100" src="{{Storage::disk('s3')->temporaryUrl($item->image, now()->addMinutes(60))}}" id="img{{$item->id}}"  alt="">
-                                        </div>
-                                        <hr>
-                                        <div class="text-lg-start">
-                                            <h1 class="mb-3 fw-bold " id="title{{$item->id}}">{{$item->title}}</h1>
-                                            <p id="desc{{$item->id}}">{!! nl2br($item->description) !!}</p>
-                                        </div>
-                                
-                                    </div>
-                                @endforeach
                             @else
                                 <div class="text-center fs-2 ">
                                     News not Avaiable
@@ -127,19 +108,9 @@
 
 <script>
 
-var newsOpen = 0;
-    var tempId = 0;
-    function openNews(id){
-        document.getElementById("newsCard"+id).classList.remove("d-none");
-        if(tempId != 0 && tempId != id){
-            document.getElementById("newsCard"+tempId).classList.add("d-none");
-        }
-        tempId = id;
-        
-    }
-
     function gotoNews(id){
-        window.location = '/news?id='+id
+        // window.location = '/news?id='+id
+        window.location = '/newsHome?id='+id
     }
 
     function gotoField(loc){

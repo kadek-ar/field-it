@@ -15,22 +15,22 @@
                 <img class="w-25" src="/img/logops.png" alt="">
             </div>
             <p class="text-center ps-4 pe-4 pb-4 fs-5 m-auto max-w-799">
-                Field-It adalah media online yang menyediakan jasa peminjaman lapangan futsal yang menampilkan jadwal secara real-time
-                , menyediakan banyak pilihan lapangan, dan fleksibilitas dalam pengaturan jadwal.
+                Field-IT adalah platform teknologi untuk layanan penyewaan lapangan olahraga secara online. Dengan mempertimbangkan solusi untuk masalah penyewaan lapangan secara konvensional, Field-IT menyediakan banyak pilihan lapangan olahraga, fleksibilitas dalam pemilihan jadwal penyewaan lapangan olahraga, dan kemudahan pembayaran yang dapat dilakukan secara online.
             </p>
         </div>
     </div>
 
 
     <br>
-    <b class="container sub_topic1">For more information and reservations</b>
-    <br>
-    <p class="container text-justify sub_topic2">
-            www.field-it.com
-            <br>
-            E-mail: field-it@binus.ac.id
-            <br>
-    </p>
+    <b class="container sub_topic1 mb-2">Contact Us</b>
+    
+    <div class="container text-justify sub_topic2 mt-1">
+        <svg style="margin-bottom: 4px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-2 bi bi-envelope" viewBox="0 0 16 16">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+        </svg>
+        <span>Fielditbusiness@gmail.com</span>
+            
+    </div>
 </div>
 
 @endsection

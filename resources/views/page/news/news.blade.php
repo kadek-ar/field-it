@@ -66,6 +66,14 @@
 
 <script>
 
+    window.onload = function() {
+        var url = new URL(window.location.href);
+        var id = url.searchParams.get("id");
+        if(id != null){
+            openNews(id)
+        }
+    }
+
     function gotoNews(id){
         window.location = '/news?id='+id
     }
@@ -80,8 +88,8 @@
         // document.getElementById("desc").innerHTML = desc.split("\n").join("<br>")
         // console.log("desc ", desc);
         // if(tempId != id){
-            console.log("tempId ", tempId);
-            console.log("id ", id);
+            // console.log("tempId ", tempId);
+            // console.log("id ", id);
             document.getElementById("newsCard"+id).classList.remove("d-none");
             if(tempId != 0 && tempId != id){
                 document.getElementById("newsCard"+tempId).classList.add("d-none");
