@@ -50,7 +50,7 @@
                     </div>
                     <hr>
                     <div>
-                        <h1 class="mb-3 fw-bold " id="title{{$item->id}}"></h1>
+                        <h1 class="mb-3 fw-bold " id="title{{$item->title}}"></h1>
                         <p id="desc{{$item->id}}">{!! nl2br($item->description) !!}</p>
                     </div>
             
