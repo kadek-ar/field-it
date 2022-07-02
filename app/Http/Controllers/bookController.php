@@ -182,7 +182,7 @@ class bookController extends Controller
         $json = json_decode($request->json, true);
 
         // dd($json["status_code"] == 409 );
-        if($json["status_code"] == 409){
+        if($json["transaction_status"] == "settlement"){
             $order->update([
                 "payment_status" => 2,
             ]);

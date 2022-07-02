@@ -45,7 +45,7 @@
 		</div>
 		<div>
 			<label class="text-black">Password</label>
-			<input type="password" name="password" id="password" class="form-control @error('email')is-invalid @enderror" placeholder="Password" required><br>
+			<input type="password" name="password" id="password" class="form-control @error('email')is-invalid @enderror" placeholder="Enter Password" required><br>
 			@error('password')
 				<div class="invalid-feedback">
 					{{ $message }}

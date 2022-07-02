@@ -166,7 +166,7 @@ class fieldController extends Controller
         
         $order = Order::where("field_id", "like", $user->field->id)->get();
         // $now = Carbon::now();
-        $order_month = Order::whereMonth("created_at", now()->month)->get();
+        $order_month = Order::whereMonth("created_at", now()->month)->where("payment_status", "like", 2)->get();
         $total_price = 0;
         foreach ($order_month as $key => $item) {
             $total_price = $total_price + $item->total_price;

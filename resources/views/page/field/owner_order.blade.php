@@ -42,7 +42,8 @@
                             }
                             // dd($json_pay["transaction_status"]);
                         @endphp
-                        @if ($item->json_result != null && $json_pay["transaction_status"] == "settlement")
+                        {{-- @if ($item->json_result != null && $json_pay["transaction_status"] == "settlement") --}}
+                        @if ($item->payment_status == 2)
                             <td> <span class="badge text-bg-success">Payment Success</span> </td>
                         @else
                             <td> <span class="badge text-bg-primary">Pending payment</span> </td>

@@ -85,7 +85,8 @@
                   // dd($json_pay["transaction_status"]);
                 @endphp
               <div class="text-center">
-                  @if($order->json_result != null && $json_pay["transaction_status"] == "settlement")
+                  {{-- @if($order->json_result != null && $json_pay["transaction_status"] == "settlement") --}}
+                  @if($order->payment_status == 2)
                     <h3 class="text-success text-center">Payment Success</h3>
                   @else
                   <button class="btn btn-success fw-bold fs-5 ps-4 pe-4" id="pay-button">
