@@ -21,7 +21,7 @@
 				margin-left: 73%;
 				width: 115px;
 				top: 108px">
-		<img class="user h-auto text-center" style="width: 163px" src="/img/logops.png" alt="img woman">
+		<img class="user h-auto text-center" style="width: 163px" src="/img/logops.webp" alt="img woman">
 	</div>
  	<h3 style="padding-top: 82px" class="text-black">Login</h3>
 

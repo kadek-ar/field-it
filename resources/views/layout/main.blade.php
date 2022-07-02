@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('/images/icons/logops-512x512.png') }}">
     {{-- <link rel="stylesheet" href="/css/stylehome.css">
     <link rel="stylesheet" href="landingPage.css">
     <link rel="stylesheet" href="/css/all.css">
@@ -45,7 +46,7 @@
             max-width: 799px;
         }
         .bg-img-home{
-            background-image: url('/img/Background.jpg')
+            background-image: url('/img/Background.webp')
         }
         .yellow-text{
             color: #F1D00A;
@@ -58,7 +59,7 @@
         <div class="container">
             <a class="navbar-brand text-white fw-bold d-flex align-items-baseline" href="/homepage">
                 <div class="me-3 bg-white rounded p-1">
-                    <img style="width: 47px;" src="/img/logops.png" alt="">
+                    <img style="width: 47px;" src="/img/logops.webp" alt="">
                 </div>
                 <span>Field-it</span>
             </a>

@@ -12,10 +12,10 @@
         <hr>
         <div class="container mt-5">
             <div class="mb-5 text-center">
-                <img class="w-25" src="/img/logops.png" alt="">
+                <img class="w-25" src="/img/logops.webp" alt="">
             </div>
             <p class="text-center ps-4 pe-4 pb-4 fs-5 m-auto max-w-799">
-                Field-IT adalah platform teknologi untuk layanan penyewaan lapangan olahraga secara online. Dengan mempertimbangkan solusi untuk masalah penyewaan lapangan secara konvensional, Field-IT menyediakan banyak pilihan lapangan olahraga, fleksibilitas dalam pemilihan jadwal penyewaan lapangan olahraga, dan kemudahan pembayaran yang dapat dilakukan secara online.
+                Field-IT is a technology platform for online sports field rental services. Providing solutions to the problem of conventional field rental, Field-IT provides many field choices, flexibility in choosing a sports field rental schedule, and easy online payments.
             </p>
         </div>
     </div>

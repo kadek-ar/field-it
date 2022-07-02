@@ -90,14 +90,16 @@
                         </div>
                         <div class="container mt-5">
                             <div class="mb-5">
-                                <img class="w-25" src="/img/logops.png" alt="">
+                                <img class="w-25" src="/img/logops.webp" alt="">
                             </div>
                             <p class="text-center ps-4 pe-4 pb-4 fs-5 m-auto max-w-799">
-                                Field-It adalah media online yang menyediakan jasa peminjaman lapangan futsal yang menampilkan jadwal secara real-time
-                                , menyediakan banyak pilihan lapangan, dan fleksibilitas dalam pengaturan jadwal.
+                                Field-IT is a technology platform for online sports field rental services. Providing solutions to the problem of conventional field rental, Field-IT provides many field choices, flexibility in choosing a sports field rental schedule, and easy online payments.
                             </p>
+                            <b>&copy; Field-IT</b>
                         </div>
                     </div>
+                    
+                    
                     <div class="topic bg-main-green text-white" style="height: 35px"></div>
             </div>
 
