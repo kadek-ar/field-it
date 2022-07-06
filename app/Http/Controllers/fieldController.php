@@ -163,8 +163,12 @@ class fieldController extends Controller
     public function orderList(){
 
         $user = Auth::user();
+        if($user->field){
+            $order = Order::where("field_id", "like", $user->field->id)->get();
+        }else{
+            $order = null;
+        }
         
-        $order = Order::where("field_id", "like", $user->field->id)->get();
         // $now = Carbon::now();
         $order_month = Order::whereMonth("created_at", now()->month)->where("payment_status", "like", 2)->get();
         $total_price = 0;

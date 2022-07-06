@@ -16,7 +16,12 @@ class scheduleController extends Controller
 {
     public function index(){
         $field = Field::where('user_id', 'like', Auth::id())->first();
-        $field_type = FieldType::where('field_id','like',$field->id)->get();
+        if($field){
+            $field_type = FieldType::where('field_id','like',$field->id)->get();
+
+        }else{
+            $field_type = null;
+        }
 
         $schedule_time = ScheduleTime::all();
 

@@ -257,7 +257,7 @@
             </div>
             <div class="d-flex mb-2">
                 <div class="rounded me-3" style="background: rgba(25,135,84); width: 25px; height: 25px"></div>
-                <div class="fw-bold">Avaiable</div>
+                <div class="fw-bold">Available</div>
             </div>
             <div class="d-flex mb-2">
                 <div class="rounded me-3" style="background: grey; width: 25px; height: 25px"></div>
