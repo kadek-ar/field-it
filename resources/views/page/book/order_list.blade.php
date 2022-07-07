@@ -27,6 +27,8 @@
                                         {{-- @if ($item->json_result != null && $json_pay["transaction_status"] == "settlement") --}}
                                         @if ($item->payment_status == 2)
                                             <span class="badge text-bg-success">Payment Success</span>
+                                        @elseif($item->payment_status == 4)
+                                            <span class="badge text-bg-danger">Payment Canceled</span>
                                         @else
                                             <span class="badge text-bg-primary">Pending Payment</span>
                                         @endif

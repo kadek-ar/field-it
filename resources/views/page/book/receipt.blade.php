@@ -88,7 +88,10 @@
                   {{-- @if($order->json_result != null && $json_pay["transaction_status"] == "settlement") --}}
                   @if($order->payment_status == 2)
                     <h3 class="text-success text-center">Payment Success</h3>
+                  @elseif($order->payment_status == 4)
+                    <h3 class="text-danger text-center">Payment Canceled</h3>
                   @else
+                  <button class="btn btn-danger fw-bold fs-5 ps-4 pe-4" onclick="deleteSessionBtn('{{$order->id}}')" id="cancel-button">CANCEL</button>
                   <button class="btn btn-success fw-bold fs-5 ps-4 pe-4" id="pay-button">
                         @if ($order->json_result == null)
                           PAY NOW 
@@ -96,6 +99,25 @@
                           CHECK PAYMENT
                         @endif
                       </button>
+
+                      <script>
+                        function deleteSessionBtn(id){
+                            Swal.fire({
+                                    title: `Cancel Payment`,
+                                    text: "Are you sure, you want to cancel this payment ?",
+                                    icon: "warning",
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Yes',
+                                    cancelButtonText: 'No',
+                            })
+                            .then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location = '/receipt/cancel/' + id ;
+                                }
+                            });
+                        
+                        }
+                      </script>
                   @endif
               </div>
 

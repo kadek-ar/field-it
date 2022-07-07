@@ -67,6 +67,7 @@ Route::get('/fieldsTo/{id}', [bookController::class, 'fieldsTo']);
 Route::get('/fieldsTo/book/order', [bookController::class, 'index']);
 Route::get('/fieldsTo/book/pay', [bookController::class, 'payment']);
 Route::post('/fieldsTo/send/order/{id}', [bookController::class, 'sendOrder']);
+Route::get('/receipt/cancel/{id}', [bookController::class, 'cancelOrder']);
 // Route::post('/fieldsTo/send/order/check/{id}', [bookController::class, 'checkOrder']);
 
 Route::get('/fieldsTo/order/list', [bookController::class, 'orderList']);

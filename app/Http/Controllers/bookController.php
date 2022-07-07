@@ -216,4 +216,12 @@ class bookController extends Controller
         return view("page.book.order_list",["order" => $order]);
     }
 
+    public function cancelOrder($id){
+        $order = Order::find($id);
+        $order->update([
+            "payment_status" => 4,
+        ]);
+        return redirect('/fieldsTo/' . $order->field_id);
+    }
+
 }
