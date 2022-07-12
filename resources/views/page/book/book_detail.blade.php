@@ -92,7 +92,7 @@
         let text = ""
         let tmpPrice = 0;
         for (var i = 0; i < time.length; i++){
-            text += "<li class='list-group-item ps-0 border-0' >" + time[i].open_time +" - " + addHours(time[i].open_time,1) + " <span class='me-3 ms-3'>" + time[i].field_type_name + "</span> " + "Rp "+ time[i].price +"</li>"
+            text += "<li class='list-group-item ps-0 border-0' >" + time[i].open_time.slice(0,2) + ":" + "00" + ":" + "00" + " - " + addHours(time[i].open_time,1) + " <span class='me-3 ms-3'>" + time[i].field_type_name + "</span> " + "Rp "+ time[i].price +"</li>"
             tmpPrice = tmpPrice + time[i].price
         }
 

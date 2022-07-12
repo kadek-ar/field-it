@@ -23,14 +23,14 @@ class adminController extends Controller
         $field->update([
             'status' => 2,
         ]);
-        alert()->success('Success', 'Field Has been Approved!');
+        alert()->success('Success', 'Field has been approved!');
         return redirect('/admin/approval');
     }
 
     public function reject(Request $request, $id){
         $field = Field::find($id);
         $field->delete();
-        alert()->success('Success', 'Field Has been Rejected!');
+        alert()->success('Success', 'Field Registration has been rejected!');
         return redirect('/admin/approval');
     }
 
@@ -68,7 +68,7 @@ class adminController extends Controller
             "description" => $request->description
         ]);
         
-        alert()->success('Success', 'News Has been Uploaded');
+        alert()->success('Success', 'News has been Uploaded');
         return redirect('/admin/news');
     }
 
@@ -77,7 +77,7 @@ class adminController extends Controller
         $news = News::find($id);
         $news->delete();
 
-        alert()->success('Success', 'News Has been Deleted');
+        alert()->success('Success', 'News has been deleted!');
         return redirect('/admin/news');
     }
 }

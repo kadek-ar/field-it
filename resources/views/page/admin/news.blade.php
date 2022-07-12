@@ -39,7 +39,7 @@
                         function deleteSessionBtn(id){
                             Swal.fire({
                                     title: `Delete News`,
-                                    text: "Are you sure, you want to delete this news ?",
+                                    text: "Are you sure you want to delete this news?",
                                     icon: "warning",
                                     showCancelButton: true,
                                     confirmButtonText: 'Yes',
