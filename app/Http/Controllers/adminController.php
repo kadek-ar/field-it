@@ -23,7 +23,7 @@ class adminController extends Controller
         $field->update([
             'status' => 2,
         ]);
-        alert()->success('Success', 'Field Has been Apprved!');
+        alert()->success('Success', 'Field Has been Approved!');
         return redirect('/admin/approval');
     }
 

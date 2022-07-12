@@ -103,7 +103,7 @@
 
     
     function addHours(timeRent,numOfHours, date = new Date()) {
-        var date = new Date('2022-03-14T'+ timeRent);
+        var date = new Date('2022-03-14T'+ timeRent.slice(0,2) + ":" + "00" + ":" + "00");
         date.setTime(date.getTime() + numOfHours * 60 * 60 * 1000);
 
         return date.getHours() + ":" + "00" + ":" + "00";
