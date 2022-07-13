@@ -64,7 +64,7 @@
 
 		</div>
 
-		<button type="submit" class="btn btn-success w-100">Signup</button>
+		<button type="submit" class="btn btn-success w-100">SIGNUP</button>
 
 		{{-- <div id="errorbox"></div><br>
 
